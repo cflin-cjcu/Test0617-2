@@ -12,7 +12,7 @@ import java.lang.reflect.Array;
 
 public class MainActivity extends AppCompatActivity {
 
-    String[] fruit = {"Apple","Banana", "Kiwi","Pineapple","AAA","BBB","CCC","DDD","EEEE","FFFF","GGGG","JJJJ"};
+    //String[] fruit = {"Apple","Banana", "Kiwi","Pineapple","AAA","BBB","CCC","DDD","EEEE","FFFF","GGGG","JJJJ"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +20,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final ListView list = (ListView)findViewById(R.id.list);
-        final ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1, fruit);
-        list.setAdapter(adapter);
+        //final ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1, fruit);
+        ArrayAdapter adapter1 = ArrayAdapter.createFromResource(this, R.array.abc, android.R.layout.simple_list_item_1);
+        list.setAdapter(adapter1);
 
         list.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
